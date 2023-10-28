@@ -11,6 +11,46 @@ class Configuration {
 	
 	static $_default_instance = null;
 
+	public $actor_build_id;
+	public $actor_build_number;
+	public $actor_events_ws_url;
+	public $actor_id;
+	public $actor_run_id;
+	public $actor_task_id;
+	public $api_base_url;
+	public $api_public_base_url;
+	public $chrome_executable_path;
+	public $container_port;
+	public $container_url;
+	public $dedicated_cpus;
+	public $default_browser_path;
+	public $default_dataset_id;
+	public $default_key_value_store_id;
+	public $default_request_queue_id;
+	public $disable_browser_sandbox;
+	public $headless;
+	public $input_key;
+	public $input_secrets_private_key_file;
+	public $input_secrets_private_key_passphrase;
+	public $is_at_home;
+	public $max_used_cpu_ratio;
+	public $memory_mbytes;
+	public $meta_origin;
+	public $metamorph_after_sleep_millis;
+	public $persist_state_interval_millis;
+	public $persist_storage;
+	public $proxy_hostname;
+	public $proxy_password;
+	public $proxy_port;
+	public $proxy_status_url;
+	public $purge_on_start;
+	public $started_at;
+	public $timeout_at;
+	public $token;
+	public $user_id;
+	public $xvfb;
+	public $system_info_interval_millis;
+			
 	/**
 	Create a `Configuration` instance.
 
@@ -40,7 +80,7 @@ class Configuration {
 		purge_on_start (str, optional): Whether the actor should purge its default storages on startup, when running locally.
 		token (str, optional): The API token for the Apify API this actor should use.
 		system_info_interval_millis (str, optional): How often should the actor emit the SYSTEM_INFO event when running locally.
-	*/		
+	*/
 	function __construct(
 		$api_base_url = null,
 		$api_public_base_url = null,

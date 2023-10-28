@@ -12,6 +12,16 @@ class Actor {
 	Args:
 		config (Configuration, optional): The actor configuration to be used. If not passed, a new Configuration instance will be created.
 	*/	
+	public $config;
+	public $apify_client;
+	public $event_manager;
+	
+	private $_is_initialized;
+	private $_is_exiting;
+	private $_send_system_info_interval_task;
+	private $_send_persist_state_interval_task;
+	private $_was_final_persist_state_emitted;
+	
 	function __construct($config=null) {
 		$this->config = $config ?? new Configuration();
 		$this->apify_client = $this->new_client();
